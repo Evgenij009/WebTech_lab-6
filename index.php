@@ -1,20 +1,20 @@
 <?php
 session_start();
-if (isset($_GET['colorBackground'])) {
-    $_SESSION['colorBackground'] = $_GET['colorBackground'];
+if (isset($_POST['colorBackground'])) {
+    $_SESSION['colorBackground'] = $_POST['colorBackground'];
     echo "GET - получен<br>";
 }
 
-if (isset($_GET['colorFont'])) {
-    $_SESSION['colorFont'] = $_GET['colorFont'];
+if (isset($_POST['colorFont'])) {
+    $_SESSION['colorFont'] = $_POST['colorFont'];
 }
 
-if (isset($_GET['colorHead'])) {
-    $_SESSION['colorHead'] = $_GET['colorHead'];
+if (isset($_POST['colorHead'])) {
+    $_SESSION['colorHead'] = $_POST['colorHead'];
 }
 
-if (isset($_GET['sizeFont'])) {
-    $_SESSION['sizeFont'] = $_GET['sizeFont'];
+if (isset($_POST['sizeFont'])) {
+    $_SESSION['sizeFont'] = $_POST['sizeFont'];
 }
 
 if (isset($_SESSION['colorBackground'])) {
@@ -42,7 +42,6 @@ if (isset($_SESSION['sizeFont'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="style.css"> -->
     <title>lab-6</title>
 </head>
 
@@ -52,20 +51,18 @@ if (isset($_SESSION['sizeFont'])) {
         <h1>Заголовок</h1>
     </div>
 
-
-
-    <form action="" method="GET">
-        <label>Coolor background: <input type="color" name="colorBackground" value="<?php if (isset($_SESSION['colorBackground'])) {
+    <form action="" method="POST">
+        <label>Color background: <input type="color" name="colorBackground" value="<?php if (isset($_SESSION['colorBackground'])) {
                                                                                         echo $_SESSION['colorBackground'];
                                                                                     } else {
                                                                                         echo "#ffffff";
                                                                                     }  ?>"></label><br>
-        <label>Coolor head: <input type="color" name="colorHead" value="<?php if (isset($_SESSION['colorHead'])) {
+        <label>Color head: <input type="color" name="colorHead" value="<?php if (isset($_SESSION['colorHead'])) {
                                                                             echo $_SESSION['colorHead'];
                                                                         } else {
                                                                             echo "#ffffff";
                                                                         }  ?>"></label><br>
-        <label>Coolor font: <input type="color" name="colorFont" value="<?php if (isset($_SESSION['colorFont'])) {
+        <label>Color font: <input type="color" name="colorFont" value="<?php if (isset($_SESSION['colorFont'])) {
                                                                             echo $_SESSION['colorFont'];
                                                                         } else {
                                                                             echo "#000000";
